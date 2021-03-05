@@ -10,10 +10,10 @@ public class Main {
         String message = "The quick brown fox jumps over the lazy dog. 👻 👻";
         EncryptedBytes encrypted = AESCipher.encrypt(message, secret);
         if (encrypted != null) {
-            System.out.println("Base64 Encrypted result: " + encrypted.toString("base64"));
-            System.out.println("Hex Encrypted result: " + encrypted.toString("hex"));
-            DecryptedBytes decrypted = AESCipher.decrypt(encrypted.toString(), secret);
-            System.out.println("Decrypted String result: " + decrypted);
+            System.out.println("Base64 Encrypted result: " + encrypted.toString("base64")); // encrypted base64 string
+            System.out.println("Hex Encrypted result: " + encrypted.toString("hex")); // encrypted hex string
+            DecryptedBytes decrypted = AESCipher.decrypt(encrypted.toString(), secret); // decrypted
+            System.out.println("Decrypted String result: " + decrypted); // don't need to call toString() method because of the smart casting (?)
         }
     }
 }
